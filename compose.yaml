@@ -1,0 +1,12 @@
+services:
+  consulta-cpf:
+    build: .
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - "./database:/data"
+
+    environment:
+      SQLITE_PATH: "/data/${SQLITE_DB_NAME}"
