@@ -25,7 +25,7 @@ public class ContatoController {
             if (contato.isPresent()) {
                 return ResponseEntity.ok(contato.get());
             } else {
-                return ResponseEntity.status(404).body(new ErrorResponse(404, "cpf não encontrado"));
+                return ResponseEntity.status(404).body(new ErrorResponse(404, "CPF não encontrado"));
             }
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(new ErrorResponse(400, "CPF inválido"));

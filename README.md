@@ -32,4 +32,5 @@ Observação: o compose mapeia `./database` para `/data` dentro do container e a
 
 - Certifique-se de que o arquivo `compose.yaml` existe na raiz do projeto (o repositório já inclui `compose.yaml` que mapeia `./database` para `/data`).
 - Se preferir rodar sem detaching, remova `-d` do comando `up`.
+- Nomeie o .env com o nome do db, no .env.exemple mostra como de modo prático.
 
