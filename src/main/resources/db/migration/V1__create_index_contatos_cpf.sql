@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS idx_contatos_cpf ON contatos(cpf);

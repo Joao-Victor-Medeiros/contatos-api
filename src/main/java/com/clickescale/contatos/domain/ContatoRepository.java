@@ -15,13 +15,12 @@ public class ContatoRepository {
     }
 
     public Optional<ContatoDTO> buscarPorCpf(String cpf) {
-
         String sql = """
-                SELECT nome, cpf, telefone
-                FROM contatos
-                WHERE REPLACE(REPLACE(REPLACE(cpf, '.', ''), '-', ''), ' ', '') = ?
-                LIMIT 1
-                """;
+            SELECT nome, cpf, telefone
+            FROM contatos
+            WHERE cpf = ?
+            LIMIT 1
+            """;
 
         try {
             return jdbcTemplate.query(
@@ -42,7 +41,6 @@ public class ContatoRepository {
                     }
             );
         } catch (DataAccessException e) {
-            // Treat database exceptions (including SQLite "no rows" cases) as not found
             return Optional.empty();
         }
     }
